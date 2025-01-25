@@ -4,15 +4,14 @@ import 'package:mealsapp/screens/meal_detail_screen.dart';
 import 'package:mealsapp/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({super.key,this.title, required this.meals,required this.onToogleFavorite});
+  const MealsScreen({super.key,this.title, required this.meals});
   final String? title;
   final List<Meal> meals;
-  final void Function (Meal meal) onToogleFavorite;
 
   void selectMeal(BuildContext context,Meal meal,) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => MealDetailScreen(meal: meal,onToogleFavorite: onToogleFavorite),
+        builder: (ctx) => MealDetailScreen(meal: meal),
       ),
     );
   }
